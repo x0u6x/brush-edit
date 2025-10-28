@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito&family=Zen+Kaku+Gothic+New&display=swap');
+
+body {
+    background-color: #F0F0F3;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* ここからヘッダー */
+
+header {
+    padding: 16px 16px;
+    margin: 0 auto;
+    margin-top: 16px;
+    max-width: 800px;
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.right-nav {
+    display: flex;
+    align-items: center;
+}
+
+h1 a {
+    font-family: "Gabarito", sans-serif;
+    font-weight: 400;
+    font-size: 2.5em;
+    color: #FC8B8B;
+    text-decoration: none;
+}
+
+.nav-link {
+    padding: 4px 16px;
+    border: none;
+}
+
+.nav-item {
+    width: auto;
+    height: 30px;
+}
+
+/* コンテナ */
+
+.container {
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 5%
+}
+
+/* サイドバー */
+
+.sidebar {
+    width: 200px;
+    height: auto;
+    padding-right: 36px;
+    padding-top: 24px;
+    border-right: 1px solid #ddd;
+}
+
+.new-create {
+    width: 100%;
+    padding: 16px 24px;
+    margin-bottom: 32px;
+    border: none;
+    border-radius: 0.8em;
+    background: linear-gradient(to right, #fc988b, #FC8B8B);
+}
+
+.new-create a {
+    text-decoration: none;
+    color: #F0F0F3;
+}
+
+.new-create:hover {
+    background: linear-gradient(to right, #f68d7f, #f87979);
+}
+
+.sidebar form {
+    display: flex;
+    gap: 4px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.search-input::placeholder {
+    font-size: 10px;
+    color: #999;
+}
+
+.search-button {
+    background-color: #999;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search-button:hover {
+    background-color: #888;
+}
+
+.tag-area {
+    margin-top: 20px;
+}
+
+.tag-area h3 {
+    font-size: 14px;
+    margin-bottom: 16px;
+    color: #333;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag-pill {
+    background-color: #e0e0e0;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.tag-pill:hover {
+    background-color: #d0d0d0;
+}
+
+.tag-pill.active {
+    background-color: #fc9d9d;
+    color: #fff;
+}
+
+/* メイン */
+
+main {
+    flex: 1;
+    max-width: 800px;
+    width: 85%;
+    margin: 16px auto;
+}
+
+.logs {
+    margin-top: 16px;
+    padding: 16px 24px;
+
+    border-radius: 1em;
+    box-shadow: 5px 5px 15px #cccccf,
+        -5px -5px 15px #ffffff;
+    /* ニューモーフィズム */
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logs:hover {
+    border: #FC8B8B 1px solid;
+    border-radius: 1em;
+}
+
+.document {
+    display: flex;
+    flex-direction: column;
+}
+
+.titles {
+    position: relative;
+}
+
+.titles a {
+    color: #000000;
+    text-decoration-color: #FC8B8B;
+    text-underline-offset: 4px;
+    letter-spacing: 0.1em;
+    display: inline-block;
+    padding-bottom: 12px;
+}
+
+/* ホバー時に文章冒頭を表示させる */
+
+.tooltip-text {
+    display: none;
+    position: fixed;
+    /* カーソルに追従するためfixed */
+    background-color: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.6em;
+    line-height: 1.4em;
+    z-index: 100;
+    max-width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    /* ツールチップ自体にマウスが反応しないように */
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.titles:hover .tooltip-text {
+    display: block;
+    opacity: 1;
+}
+
+/* タグ */
+
+.tag {
+    margin-bottom: 8px;
+}
+
+.pill {
+    padding: 1px 8px;
+    font-size: 13px;
+    background-color: #fc9d9d;
+    color: #fff;
+    border-radius: 16px;
+}
+
+.updated-at {
+    color: #808080;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+}
+
+.char-count {
+    margin-left: 16px;
+}
+
+.delete-button {
+    border: none;
+}
+
+.pagination {
+    margin-top: 16px;
+}

@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap');
+
+body {
+  background-color: #F0F0F3;
+}
+
+
+/* ここからnav */
+
+header {
+  padding: 16px 16px;
+  margin: 16px auto;
+}
+
+.nav-items {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-nav {
+  display: flex;
+  align-items: center;
+}
+
+.return-button {
+  text-decoration: none;
+  padding: 0px 16px;
+}
+
+/* ダークモード用スライドボタン */
+
+.darkmode {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mode {
+  width: auto;
+  height: 15px;
+  display: block;
+}
+
+/* ボタンを表示するエリア */
+.dark-switch {
+  position: relative;
+  /* 親要素が基点 */
+  margin: auto;
+  /* 中央寄せ */
+  width: 40px;
+  /* ボタンの横幅 */
+}
+
+/*  チェックボックス */
+.dark-switch input[type="checkbox"] {
+  display: none;
+  /* チェックボックス非表示 */
+}
+
+/* チェックボックスのラベル（標準）*/
+.dark-switch label {
+  display: block;
+  /* ボックス要素に変更 */
+  box-sizing: border-box;
+  /* 枠線を含んだサイズ */
+  height: 21px;
+  /* ボタンの高さ       */
+  border: 1.5px solid #999999;
+  /* 未選択タブのの枠線 */
+  border-radius: 11px;
+  /* 角丸 */
+}
+
+/* チェックボックスのラベル（ONのとき）*/
+.dark-switch input[type="checkbox"]:checked+label {
+  border-color: #fff;
+  /* 選択タブの枠線 */
+  background-color: #303030;
+}
+
+/* 丸部分のSTYLE（標準）*/
+.dark-switch #swImg {
+  position: absolute;
+  /* 親要素からの相対位置*/
+  width: 15px;
+  /* 丸の横幅 */
+  height: 15px;
+  /* 丸の高さ */
+  background: #999999;
+  /* カーソルタブの背景 */
+  top: 3px;
+  /* 親要素からの位置 */
+  left: 3px;
+  /* 親要素からの位置 */
+  border-radius: 9px;
+  /* 角丸 */
+  transition: .2s;
+  /* 滑らか変化 */
+}
+
+/*  丸部分のSTYLE（ONのとき */
+.dark-switch input[type="checkbox"]:checked~#swImg {
+  transform: translateX(19px);
+  /* 丸も右へ移動 */
+  background: #fff;
+  /* カーソルタブの背景 */
+}
+
+
+/* タグ追加 */
+
+.tag-toggle-container {
+  position: relative;
+}
+
+.tag-toggle {
+  margin-left: 16px;
+  color: #777;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.tag-count {
+  margin-right: 12px;
+  padding: 4px 7px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 15px;
+}
+
+.tag-input-popup {
+  display: none;
+  position: absolute;
+  left: -80px;
+  z-index: 100;
+  margin-top: 12px;
+  padding: 16px;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input[name="tags"] {
+  width: 95%;
+  padding: 6px;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+
+.tag-pills {
+  margin: 8px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  background: #ccc;
+  color: #444;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 13px;
+}
+
+.tag-pill .delete-tag-btn {
+  margin-left: 8px;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+}
+
+.tag-pill .delete-tag-btn:hover {
+  color: #cc0000;
+}
+
+.add-tag-btn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px;
+  background: #FC8B8B;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-tag-btn:hover {
+  background: #f77d7d;
+}
+
+
+/* プレビューボタン */
+
+.preview {
+  padding: 4px 16px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 2em;
+}
+
+.preview a {
+  text-decoration: none;
+  color: #000000;
+}
+
+/* ここまでnav */
+
+
+.create {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+
+  font-size: 20px;
+
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #000000;
+  background-color: #F0F0F3;
+}
+
+.content {
+  width: 100%;
+  min-height: 400px;
+  resize: vertical;
+  overflow-y: visible;
+  border: none;
+  outline: none;
+  padding: 24px 16px;
+  box-sizing: border-box;
+  /* パディングを含めたサイズ計算 */
+
+  font-size: 16px;
+  line-height: 1.8em;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  background-color: #F0F0F3;
+}
+
+/* 保存成功・失敗通知 */
+
+.notification {
+  position: fixed;
+  bottom: 48px;
+  right: 20px;
+  padding: 10px 10px;
+  border-radius: 16px;
+  color: white;
+  font-size: 12px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.notification.success {
+  background-color: #303030;
+}
+
+.notification.error {
+  background-color: #f44336;
+}
+
+/* 文字数カウント */
+
+#char-count {
+  position: fixed;
+  /* ビューポートに固定 */
+  right: 24px;
+  bottom: 24px;
+  font-size: 14px;
+}
+
+
+/* ダークモード */
+
+body.dark {
+  background-color: #303030;
+  color: #f0f0f3;
+}
+
+body.dark .create input,
+body.dark .create textarea {
+  background-color: #303030;
+  color: #cfcfcf;
+}
+
+body.dark header .nav-items .return-button {
+  color: #f0f0f3;
+}
+
+/* 通知ダークモード */
+
+body.dark .create .notification.success {
+  color: #303030;
+  background-color: #bbbbbb;
+}
+
+body.dark .create .notification.error {
+  background-color: #f44336;
+  color: #f0f0f3;
+}
+
+/* アイコン色反転 */
+body.dark header .nav-items .right-nav .darkmode .mode {
+  filter: invert(1);
+}
+
+/* プレースホルダ */
+body.dark .create input.title::placeholder,
+body.dark .create textarea.content::placeholder {
+  color: #bbbbbb;
+}
