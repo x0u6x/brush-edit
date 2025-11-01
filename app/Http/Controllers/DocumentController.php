@@ -67,33 +67,6 @@ class DocumentController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        // $document = Document::create([   
-        //     'title' => $request->title,
-        //     'content' => $request->content,
-        //     'user_id' => auth()->id(),  
-        // ]);
-        // return redirect()->route('document.index');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Document  $document
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Document  $document
@@ -107,22 +80,6 @@ class DocumentController extends Controller
         return view('documents.edit', compact('document'));
     }
     //↑あとで細かく確認する
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Document  $document
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        // $document = Document::findOrFail($id);
-        // $document->title = $request->title;
-        // $document->content = $request->content;
-        // $document->save();
-        // return redirect()->route('document.index');
-    }
 
     /**
      * Remove the specified resource from storage.
