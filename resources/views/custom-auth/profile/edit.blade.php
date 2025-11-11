@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '管理画面')
+@section('title', 'アカウント管理画面')
 
 @section('content')
 
@@ -25,3 +25,4 @@
         @include('custom-auth.profile.partials.delete-user-form')
     </section>
 </div>
+@endsection
