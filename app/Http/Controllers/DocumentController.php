@@ -60,7 +60,7 @@ class DocumentController extends Controller
         //新しいDocumentモデル作成
         $document = Document::create([
             'user_id' => auth()->id(),
-            'status' => 'draft', // 下書き状態
+
         ]);
         //editに直通
         return redirect()->route('document.edit', $document->id);
