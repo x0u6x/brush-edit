@@ -7,11 +7,10 @@
     <title>@yield('title') - Brush Edit</title>
 
     @vite(['resources/css/reset.css']) <!--リセットCSS -->
-    @vite(['resources/css/base.css']) <!--共通CSS のちほどまとめて継承 -->
     @vite(['resources/css/directory.css']) <!--このページのみのCSS -->
     @vite(['resources/css/pagination.css']) <!--ページネーション -->
 
-    @vite(['resources/js/directory.js'])
+    @vite(['resources/js/app.js'])
 </head>
 
 <body>
