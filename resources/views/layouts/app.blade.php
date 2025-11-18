@@ -8,6 +8,7 @@
 
     @vite(['resources/css/reset.css']) <!--リセットCSS -->
     @vite(['resources/css/directory.css']) <!--このページのみのCSS -->
+    @vite(['resources/css/profile.css']) <!--このページのみのCSS -->
     @vite(['resources/css/pagination.css']) <!--ページネーション -->
 
     @vite(['resources/js/app.js'])
