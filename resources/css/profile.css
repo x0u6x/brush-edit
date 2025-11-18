@@ -1,0 +1,50 @@
+/* 全体のコンテナ */
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    gap: 5%
+}
+
+/* サイドバー */
+
+.profile-sidebar {
+    width: 200px;
+    height: auto;
+    padding-right: 36px;
+    padding-top: 24px;
+    border-right: 1px solid #ddd;
+}
+
+.profile-sidebar button {
+    width: 100%;
+    padding: 16px 24px;
+    margin-bottom: 8px;
+    border: none;
+    border-radius: 0.8em;
+    cursor: pointer;
+}
+
+.profile-sidebar button:hover {
+    background: #FC8B8B;
+    color: #f0f0f3;
+}
+
+.profile-sidebar button.active {
+    background: #FC8B8B;
+    color: #f0f0f3;
+}
+
+.profile-sidebar button.delete-btn.active {
+    background: #e3342f;
+}
+
+.profile-main {
+    flex: 1;
+    padding: 16px 24px;
+
+    border-radius: 1em;
+    box-shadow: 5px 5px 15px #cccccf,
+        -5px -5px 15px #ffffff;
+    /* ニューモーフィズム */
+}
