@@ -1,53 +1,82 @@
 <section>
-    <header>
-        <h2>
-            {{ __('Delete Account') }}
-        </h2>
 
-        <p>
-            {{ __('Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.') }}
-        </p>
-    </header>
+    <h2>アカウントを削除</h2>
 
-    <x-danger-button
-        x-data=""
-        x-on:click.prevent="$dispatch('open-modal', 'confirm-user-deletion')">{{ __('Delete Account') }}</x-danger-button>
+    <p class="profile-info">
+        アカウントを削除すると、全てのデータとファイルも完全に削除されます。
+        アカウントを削除する前に必要なデータがあれば事前にダウンロードの実施をお願いします。
+    </p>
 
-    <x-modal name="confirm-user-deletion" :show="$errors->userDeletion->isNotEmpty()" focusable>
-        <form method="post" action="{{ route('profile.destroy') }}">
-            @csrf
-            @method('delete')
+    <div x-data="{ open: {{ $errors->userDeletion->isNotEmpty() ? 'true' : 'false' }} }">
 
-            <h2>
-                {{ __('Are you sure you want to delete your account?') }}
-            </h2>
+        <!-- アカウント削除ボタン -->
+        <button
+            @click="open = true"
+            class="user-delete-btn">
+            アカウント削除
+        </button>
 
-            <p>
-                {{ __('Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.') }}
-            </p>
+        <!-- モーダル：オーバーレイ -->
+        <div
+            x-show="open"
+            x-transition
+            class="modal-overlay">
 
-            <div>
-                <x-input-label for="password" value="{{ __('Password') }}" />
+            <!-- モーダル本体 -->
+            <div
+                class="modal-container"
+                @click.outside="open = false">
 
-                <x-text-input
-                    id="password"
-                    name="password"
-                    type="password"
+                <span class="modal-close"
+                    @click="open = false">&times;
+                </span>
 
-                    placeholder="{{ __('Password') }}" />
+                <h2 class="modal-title">本当に削除しますか？</h2>
 
-                <x-input-error :messages="$errors->userDeletion->get('password')" />
+                <p class="modal-text">
+                    この操作は元に戻せません。<br>
+                    アカウントに紐づくデータもすべて削除されます。
+                </p>
+
+                <form method="post" action="{{ route('profile.destroy') }}">
+                    @csrf
+                    @method('delete')
+
+                    <label for="password" class="form-label">
+                        確認のためパスワードを入力してください
+                    </label>
+
+                    <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        class="input-text">
+
+                    @if ($errors->userDeletion->has('password'))
+                    <p class="form-error">
+                        {{ $errors->userDeletion->first('password') }}
+                    </p>
+                    @endif
+
+                    <div class="modal-actions">
+                        <button
+                            type="button"
+                            class="btn-secondary"
+                            @click="open = false">
+                            キャンセル
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="btn-danger">
+                            削除する
+                        </button>
+                    </div>
+                </form>
+
             </div>
+        </div>
+    </div>
 
-            <div>
-                <x-secondary-button x-on:click="$dispatch('close')">
-                    {{ __('Cancel') }}
-                </x-secondary-button>
 
-                <x-danger-button>
-                    {{ __('Delete Account') }}
-                </x-danger-button>
-            </div>
-        </form>
-    </x-modal>
 </section>
