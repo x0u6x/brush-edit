@@ -22,29 +22,90 @@
     margin-bottom: 8px;
     border: none;
     border-radius: 0.8em;
-    cursor: pointer;
-}
-
-.profile-sidebar button:hover {
-    background: #FC8B8B;
-    color: #f0f0f3;
 }
 
 .profile-sidebar button.active {
     background: #FC8B8B;
     color: #f0f0f3;
+    cursor: pointer;
 }
 
-.profile-sidebar button.delete-btn.active {
-    background: #e3342f;
+.grayout-btn {
+    background-color: #e0e0e0;
 }
 
-.profile-main {
+/* メイン */
+
+.profile-section {
     flex: 1;
     padding: 16px 24px;
+    margin-bottom: 16px;
 
     border-radius: 1em;
     box-shadow: 5px 5px 15px #cccccf,
         -5px -5px 15px #ffffff;
     /* ニューモーフィズム */
+}
+
+h2 {
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: #646464;
+    font-weight: bold;
+}
+
+.profile-info {
+    margin-bottom: 24px;
+    line-height: 1.6em;
+}
+
+.form-group {
+    margin: 8px;
+}
+
+.form-label {
+    margin-right: 8px;
+}
+
+.form-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.profile-save-btn {
+    background-color: #999;
+    color: #fff;
+    padding: 8px 16px;
+    margin-top: 16px;
+    border: none;
+    border-radius: 0.8em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.profile-save-btn:hover {
+    background-color: #FC8B8B;
+}
+
+.profile-saved-message {
+    display: inline;
+    margin-left: 8px;
+    color: #008000;
+    font-size: 12px;
+}
+
+.user-delete-btn {
+    background-color: #e3342f;
+    color: #fff;
+    padding: 8px 16px;
+    margin-top: 16px;
+    border: none;
+    border-radius: 0.8em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.user-delete-btn:hover {
+    background-color: #d9201a;
 }
