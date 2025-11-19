@@ -14,10 +14,8 @@
             アカウント設定
         </button>
 
-        <button
-            @click="tab = 'style'"
-            :class="tab === 'style' ? 'active' : ''">
-            スタイル設定
+        <button class="grayout-btn">
+            スタイル設定（準備中）
         </button>
     </aside>
 
@@ -36,14 +34,6 @@
 
             <div class="profile-section">
                 @include('custom-auth.profile.partials.delete-user-form')
-            </div>
-        </div>
-
-        <!-- スタイル設定（準備中） -->
-        <div x-show="tab === 'style'">
-            <div class="profile-section">
-                <h2>スタイル設定</h2>
-                <p class="profile-info">この機能は現在準備中です。</p>
             </div>
         </div>
 
