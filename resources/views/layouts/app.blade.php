@@ -13,6 +13,7 @@
     @vite(['resources/css/pagination.css']) <!-- ページネーション -->
 
     @vite(['resources/js/app.js'])
+    @vite(['resources/js/directory.js']) <!-- タグ検索 -->
 </head>
 
 <body>
