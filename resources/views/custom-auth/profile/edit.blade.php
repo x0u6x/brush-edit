@@ -4,25 +4,40 @@
 
 @section('content')
 
-<div class="profile-wrapper">
-    <h1 class="profile-title">プロフィール設定</h1>
+<div class="profile-container" x-data="{ tab: 'account' }">
 
-    <!-- プロフィール情報更新 -->
-    <section class="profile-section">
-        <h2>基本情報</h2>
-        @include('custom-auth.profile.partials.update-profile-information-form')
-    </section>
+    <!-- サイドバー -->
+    <aside class="profile-sidebar">
+        <button
+            @click="tab = 'account'"
+            :class="tab === 'account' ? 'active' : ''">
+            アカウント設定
+        </button>
 
-    <!-- パスワード更新 -->
-    <section class="profile-section">
-        <h2>パスワード変更</h2>
-        @include('custom-auth.profile.partials.update-password-form')
-    </section>
+        <button class="grayout-btn">
+            スタイル設定（準備中）
+        </button>
+    </aside>
 
-    <!-- アカウント削除 -->
-    <section class="profile-section delete-section">
-        <h2>アカウント削除</h2>
-        @include('custom-auth.profile.partials.delete-user-form')
-    </section>
+    <!-- メインコンテンツ -->
+    <main class="profile-main">
+
+        <!-- アカウント設定 -->
+        <div x-show="tab === 'account'">
+            <div class="profile-section">
+                @include('custom-auth.profile.partials.update-profile-information-form')
+            </div>
+
+            <div class="profile-section">
+                @include('custom-auth.profile.partials.update-password-form')
+            </div>
+
+            <div class="profile-section">
+                @include('custom-auth.profile.partials.delete-user-form')
+            </div>
+        </div>
+
+    </main>
 </div>
+
 @endsection
