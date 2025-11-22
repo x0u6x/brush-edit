@@ -24,9 +24,11 @@
         <p class="form-error">{{ $message }}</p>
         @enderror
 
-        <button type="submit" class="btn-nomal">
-            リセットリンクを送信
-        </button>
+        <div class="modal-actions">
+            <button type="submit" class="btn-nomal">
+                リセットリンクを送信
+            </button>
+        </div>
     </form>
 
 </x-modals.modal-wrapper>
