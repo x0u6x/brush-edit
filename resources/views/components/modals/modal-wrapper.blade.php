@@ -16,11 +16,5 @@
         <div class="modal-body">
             {{ $slot }}
         </div>
-
-        @if (isset($actions))
-        <div class="modal-actions">
-            {{ $actions }}
-        </div>
-        @endif
     </div>
 </div>
