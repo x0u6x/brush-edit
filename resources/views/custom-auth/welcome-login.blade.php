@@ -7,11 +7,11 @@
     <title>Brush Edit | ログイン</title>
 
     @vite(['resources/css/reset.css']) <!--リセットCSS -->
-    @vite(['resources/css/base.css']) <!--共通CSS のちほどまとめて継承 -->
     @vite(['resources/css/login.css']) <!--このページのみのCSS -->
+    @vite(['resources/css/modal.css']) <!--このページのみのCSS -->
 
     @vite(['resources/js/login.js']) <!-- タブ切り替え -->
-    @vite(['resources/js/password-reset.js']) <!-- パスワードリセットモーダル -->
+    @vite(['resources/js/app.js']) <!-- パスワードリセットモーダル -->
 </head>
 
 <body>
@@ -99,27 +99,15 @@
                 </form>
 
                 <!-- パスワードリクエスト -->
-                <a href="#" class="forgot-password-link">パスワードをお忘れですか？</a>
+                <div x-data="{ openPasswordReset: {{ $errors->has('email') ? 'true' : 'false' }} }">
 
-                <!-- パスワードリセットモーダル -->
-                <div class="modal" id="forgotPasswordModal">
-                    <div class="modal-content">
-                        <span class="modal-close">&times;</span>
-                        <h2>パスワードリセット</h2>
-                        <p>ご登録時のメールアドレスを入力頂ければ、パスワードリセットのためのリンクをメールで送信いたします。</p>
-                        <form id="forgot-password-form" novalidate>
-                            @csrf
-                            <div class="form-input">
-                                <label for="reset-email">メールアドレス</label>
-                                <input id="reset-email" type="email" name="email" placeholder="example@example.com" autofocus>
-                                <span class="error" id="email-error"></span>
-                                <div class="success" id="success-message"></div>
-                            </div>
-                            <button type="submit">リセットリンクを送信</button>
-                        </form>
-                    </div>
+                    @include('custom-auth.modals.password-reset-modal', [
+                    'open' => 'openPasswordReset'
+                    ])
+
                 </div>
             </div>
+
 
             <div class="register-form">
 
