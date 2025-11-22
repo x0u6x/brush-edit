@@ -56,26 +56,32 @@
     box-sizing: border-box;
 }
 
-/* ===============================
-   モーダル下部のボタン配置
-   =============================== */
+/* モーダル下部のボタン配置 */
 .modal-actions {
     display: flex;
     justify-content: flex-end;
     gap: 12px;
-    margin-top: 20px;
 }
 
-/* ===============================
-   ボタンスタイル（共通）
-   =============================== */
+/* ボタンスタイル（共通）*/
 .btn-secondary,
-.btn-danger {
+.btn-danger,
+.btn-nomal {
     padding: 8px 16px;
     border-radius: 8px;
     cursor: pointer;
     border: none;
     font-size: 14px;
+}
+
+.btn-nomal {
+    background-color: #FC8B8B;
+    color: #fff;
+}
+
+.btn-nomal:hover {
+    background-color: #f77d7d;
+    color: #fff;
 }
 
 /* キャンセル系 */
@@ -98,9 +104,7 @@
     background-color: #d9201a;
 }
 
-/* ===============================
-   エラーメッセージ
-   =============================== */
+/* エラーメッセージ */
 .form-error {
     color: #e3342f;
     font-size: 12px;
