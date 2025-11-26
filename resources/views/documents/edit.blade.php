@@ -57,7 +57,7 @@
 
   <div class="create">
     <input class="title" type="text" name="title" placeholder="無題" value="{{ $document->title ?? '' }}">
-    <textarea class="content" name="content" data-document-id="{{ $document->id ?? 'temp' }}">{{ $document->content ?? '' }}</textarea>
+    <textarea class="content" name="content" data-document-id="{{ $document->id }}">{{ $document->content ?? '' }}</textarea>
     <div id="notification" class="notification"></div>
   </div>
   <div id="char-count"></div>
