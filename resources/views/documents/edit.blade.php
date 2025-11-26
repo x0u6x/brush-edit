@@ -7,7 +7,6 @@
   <title>編集画面 - Blush Edit</title>
 
   @vite(['resources/css/reset.css']) <!--リセットCSS -->
-  @vite(['resources/css/base.css']) <!--共通CSS のちほどまとめて継承 -->
   @vite(['resources/css/create.css']) <!--このページのみのCSS -->
 
   @vite(['resources/js/create.js']) <!-- 入力・編集ページのみのJS -->
@@ -22,7 +21,9 @@
   <header>
     <nav class="nav-items">
       <a class="return-button" href="{{ route('document.index') }}">←</a>
+
       <div class="right-nav">
+
         <div class="darkmode">
           <img class="mode" src="{{ asset('img/sun.png') }}">
           <div class="dark-switch">
@@ -32,6 +33,7 @@
           </div>
           <img class="mode" src="{{ asset('img/moon.png') }}">
         </div>
+
         <div class="tag-toggle-container">
           <!-- トグルボタン -->
           <span class="tag-toggle"># タグ</span>
@@ -44,16 +46,18 @@
             <button class="add-tag-btn">追加</button>
           </div>
         </div>
+
         <button class="preview">
           <a href="{{ route('document.preview', $document->id) }}" target=”_blank”>preview</a>
         </button>
+
       </div>
     </nav>
   </header>
 
   <div class="create">
     <input class="title" type="text" name="title" placeholder="無題" value="{{ $document->title ?? '' }}">
-    <textarea class="content" name="content" data-document-id="{{ $document->id ?? 'temp' }}">{{ $document->content ?? '' }}</textarea>
+    <textarea class="content" name="content" data-document-id="{{ $document->id }}">{{ $document->content ?? '' }}</textarea>
     <div id="notification" class="notification"></div>
   </div>
   <div id="char-count"></div>

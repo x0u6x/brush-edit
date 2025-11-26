@@ -88,7 +88,7 @@
                     <div>
                         <label for="remember_me">
                             <input id="remember_me" type="checkbox" name="remember">
-                            <span>{{ __('Remember me') }}</span>
+                            <span>この端末でログイン状態を記憶する</span>
                         </label>
                     </div>
 

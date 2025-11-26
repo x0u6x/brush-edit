@@ -5,6 +5,7 @@ body {
     font-family: "Zen Kaku Gothic New", sans-serif;
     font-weight: 400;
     font-style: normal;
+    font-size: 14px;
 }
 
 /* ここからヘッダー */
@@ -27,7 +28,7 @@ header {
 h1 a {
     font-family: "Gabarito", sans-serif;
     font-weight: 400;
-    font-size: 2.5em;
+    font-size: 40px;
     color: #FC8B8B;
     text-decoration: none;
 }
@@ -73,6 +74,7 @@ h1 a {
 .new-create a {
     text-decoration: none;
     color: #F0F0F3;
+    font-size: 14px;
 }
 
 .new-create:hover {
@@ -191,6 +193,7 @@ main {
     letter-spacing: 0.1em;
     display: inline-block;
     padding-bottom: 12px;
+    font-size: 16px;
 }
 
 /* ホバー時に文章冒頭を表示させる */
