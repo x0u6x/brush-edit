@@ -17,7 +17,6 @@ export default defineConfig({
 
                 'resources/js/app.js',
                 'resources/js/login.js',
-                'resources/js/password-reset.js',
                 'resources/js/create.js',
                 'resources/js/directory.js',
                 'resources/js/autosave.js',
