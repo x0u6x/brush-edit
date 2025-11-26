@@ -44,7 +44,7 @@ RUN composer install --no-dev --optimize-autoloader
 # Laravel キャッシュ最適化
 RUN php artisan config:cache && php artisan route:cache && php artisan view:cache
 
-EXPOSE 8000
+EXPOSE 9000
 
 # PHP-fpm で起動
 CMD ["php-fpm"]
