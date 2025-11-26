@@ -5,7 +5,7 @@ body {
     font-family: "Zen Kaku Gothic New", sans-serif;
     font-weight: 400;
     font-style: normal;
-
+    font-size: 16px;
 }
 
 .wrapper {
@@ -79,6 +79,10 @@ li {
 
 .auth-tabs {
     margin-left: 10px;
+}
+
+.auth-tabs button {
+    font-size: 14px;
 }
 
 .tab {
