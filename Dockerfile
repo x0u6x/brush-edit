@@ -51,10 +51,10 @@ RUN composer install --no-dev --optimize-autoloader
 RUN mkdir -p /run/php && chown -R www-data:www-data /run/php
 
 # キャッシュ系（環境変数が揃ってないと失敗するので失敗しても無視する）
-RUN php artisan config:clear || true \
- && php artisan config:cache || true \
- && php artisan route:cache || true \
- && php artisan view:cache || true
+RUN php artisan config:clear || true 
+#  && php artisan config:cache || true \
+#  && php artisan route:cache || true \
+#  && php artisan view:cache || true
 
 # デフォルト nginx 設定を削除（Welcome を防ぐ）
 RUN rm -f /etc/nginx/sites-enabled/default || true \
