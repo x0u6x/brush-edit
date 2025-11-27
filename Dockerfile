@@ -26,7 +26,8 @@ RUN apt-get update && apt-get install -y \
     git \
     libzip-dev \
     libpng-dev \
- && docker-php-ext-install pdo_mysql zip gd \
+    libpq-dev \
+ && docker-php-ext-install pdo_pgsql pgsql pdo_mysql zip gd \
  && rm -rf /var/lib/apt/lists/*
 
 # Composer をインストール
