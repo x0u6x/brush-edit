@@ -56,6 +56,10 @@ RUN php artisan config:clear || true \
  && php artisan route:cache || true \
  && php artisan view:cache || true
 
+# デフォルト nginx 設定を削除（Welcome を防ぐ）
+RUN rm -f /etc/nginx/sites-enabled/default || true \
+    && rm -f /etc/nginx/conf.d/default.conf || true
+
 # Nginx 設定をコピー
 COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
 
