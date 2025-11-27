@@ -47,6 +47,9 @@ RUN chown -R www-data:www-data storage bootstrap/cache
 # 本番向け Composer インストール
 RUN composer install --no-dev --optimize-autoloader
 
+# php-fpm が使うディレクトリを作る
+RUN mkdir -p /run/php && chown -R www-data:www-data /run/php
+
 # キャッシュ系（環境変数が揃ってないと失敗するので失敗しても無視する）
 RUN php artisan config:clear || true \
  && php artisan config:cache || true \
